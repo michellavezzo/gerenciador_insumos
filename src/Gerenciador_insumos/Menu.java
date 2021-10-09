@@ -40,7 +40,7 @@ public class Menu implements ActionListener {
 	private String videoFile;
 	
 	public Menu() {
-		mainFrame = new JFrame("RTSP Test");
+		mainFrame = new JFrame("O MINISTERIO DA SAUDE MENTE");
 
 		setupButton = new JButton("Setup");
 		playButton = new JButton("Play");
@@ -93,10 +93,7 @@ public class Menu implements ActionListener {
 	        	System.exit(0);
 	        }
 	     });
-
-		
-		
-		
+	
 	}
 	
 	

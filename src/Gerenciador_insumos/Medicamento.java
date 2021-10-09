@@ -34,7 +34,5 @@ public class Medicamento {
 	}
 	public void setDisponibilizacao(String disp) {
 		this.disp = disp;
-	}
-	
-
+	}	
 }
