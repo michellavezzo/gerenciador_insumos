@@ -14,10 +14,10 @@ public class Controller {
 	}
 	//local 0 é o MS
 	
-	public void cadastraInsumosMS() {		
+	public void cadastraInsumosMS(String nome, String dtVencimento, String nomeFabricante, int quantidade, int valorUnitário, int tipoInsumo) {		
 		this.locais[0].setNome("MS");
 		this.locais[0].setTipo(0);
-		this.locais[0].setNewInsumo("nulo", "nulo", "nulo", 10, 10, 0); // falta parametros
+		this.locais[0].setNewInsumo("nome", "dtVencimento", "nomeFabricante", quantidade, valorUnitário, tipoInsumo); // falta parametros
 		return;
 	}
 

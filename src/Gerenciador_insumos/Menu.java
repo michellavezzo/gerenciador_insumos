@@ -15,12 +15,12 @@ public class Menu {
 	}
 	
 	public void mainMenu() {
+		while(true) {
 		System.out.println("GERENCIADOR DE INSUMOS - MINISTÉRIO DA SAÚDE");
 		System.out.println("ESCOLHA AS OPCOES: \n 1 - CADASTRAR INSUMO \n 2 - CONSULTAR INSUMO"
 				+ "\n 3 - CONSULTAR INSUMO COM DESCRICAO \n 4 - CONSULTAR INSUMO COM BASE NO LOCAL E TIPO \n"
 				+ " 5 - DISTRIBUIR INSUMO"
 				+ "6 - SALVAR INSUMOS \n 7 - LER INSUMOS");
-		while(true) {
 			InputStream is = System.in;
 			InputStreamReader isr = new InputStreamReader(is);
 			BufferedReader br = new BufferedReader(isr);
@@ -43,15 +43,42 @@ public class Menu {
 	}
 	
 	public void selectOption(int option) {	
+		InputStream is = System.in;
+		InputStreamReader isr = new InputStreamReader(is);
+		BufferedReader br = new BufferedReader(isr);
+
+		
 		switch(option) {
 			case 0:
 				System.out.println("--INPUT:  "  + option);
 				return;
 			case 1 :
+				try {
+					System.out.println("DIGITE NOME: ");
+					String nome = br.readLine();
+					System.out.println("DIGITE DATA VENCIMENTO: ");
+					String dtVencimento = br.readLine();
+					System.out.println("DIGITE NOME DO FABRICANTE: ");
+					String nomeFabricante = br.readLine();
+					System.out.println("DIGITE QUANTIDADE: ");
+					String quantidade = br.readLine();
+					System.out.println("DIGITE VALOR UNITÁRIO");
+					String valorUnitário = br.readLine();
+					System.out.println("DIGITE TIPO INSUMO (N° INTEIRO):\n 1 - EPI\n 2 - VACINA\n 3 - MEDICAMENTOS  ");
+					String tipoInsumo = br.readLine();
+
+					//Integer.parseInt(tipoInsumo)
+					controller.cadastraInsumosMS(nome, dtVencimento, nomeFabricante, Integer.parseInt(quantidade), Integer.parseInt(valorUnitário), Integer.parseInt(tipoInsumo)); // falta adicionar parametros para setar insumos.
+					
+				} catch (IOException e) {
+					System.out.println("erro de leitura");
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				System.out.println("--INPUT:  "  + option);
-				controller.cadastraInsumosMS(); // falta adicionar parametros para setar insumos.
 				break;
 			case 2:
+				
 				System.out.println("--INPUT:  "  + option);
 				controller.consultaInsumos(0); // escolher indice do local;
 				break;
