@@ -60,18 +60,18 @@ public class Menu {
 				controller.consultaInsumosDescricao(0); // escolher indice do local;
 				break;
 			case 4:
-				System.out.println("--INPUT:  "  + option);
+				System.out.println("--INPUT:  "  + option);// falta adicionar parametros para setar insumos.
 				controller.consultaInsumos(0, 0);
 				break;
 			case 5:
 				System.out.println("--INPUT:  "  + option);
-				controller.distribuiInsumo(option, null);			
+				controller.distribuiInsumo(2, "Epi");	// falta adicionar parametros para setar insumos.		
 				break;
 			case 6:
-				System.out.println("--INPUT:  "  + option);
+				System.out.println("--INPUT:  "  + option);// falta adicionar parametros para setar insumos.
 				break;
 			case 7:
-				System.out.println("--INPUT:  "  + option);
+				System.out.println("--INPUT:  "  + option);// falta adicionar parametros para setar insumos.
 				break;	
 			default:
 				System.out.println("Entrada Invalida");					
