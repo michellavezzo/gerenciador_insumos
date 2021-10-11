@@ -7,9 +7,9 @@ public class Local {
 	
 	
 	public Local() {
-		this.nome = null;
+		this.nome = "null";
 		this.tipo = -1;
-		this.insumos = null;
+		//this.insumos = null;
 	}
 	//public void setLocal()
 	
@@ -22,13 +22,16 @@ public class Local {
 //		}
 		
 		Insumo insumo = new Insumo();
-		insumo.setInsumo(nome, dtVencimento, nomeFabricante, quantidade, valorUnitário, tipoInsumo);
+		insumo = insumo.newInsumo(nome, dtVencimento, nomeFabricante, quantidade, valorUnitário, tipoInsumo);
 		
-		int n = insumos.length;
+		int n = 1023;
 		for(int i = 0; i < n; i++) {
-			if(insumos[i] == null) {
-				insumos[i] = insumo.getInsumo();
-				System.out.println("Novo insumo adicionado na posição: " + i);
+			//System.out.println("insumo : " + insumos[i].getNome());
+			//System.out.println("Novo insumo adicionado na posição: " + i);
+			if(this.insumos[i] == null) {
+				this.insumos[i] = new Insumo();
+				this.insumos[i] = insumo;
+				System.out.println("Novo insumo adicionado na posição: " + i + insumos[i].getNome());
 				return;			
 			}
 		}

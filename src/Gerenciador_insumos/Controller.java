@@ -10,14 +10,14 @@ public class Controller {
 	//Object[] insumoFiltradoArr = new Object[1023];
 	
 	public Controller() {
-		
+		this.locais[0] = new Local();
 	}
 	//local 0 é o MS
 	
-	public void cadastraInsumosMS() {	
-		locais[0].setNome("MS");
-		locais[0].setTipo(0);
-		locais[0].setNewInsumo(null, null, null, 0, 0, 0); // falta parametros
+	public void cadastraInsumosMS() {		
+		this.locais[0].setNome("MS");
+		this.locais[0].setTipo(0);
+		this.locais[0].setNewInsumo("nulo", "nulo", "nulo", 10, 10, 0); // falta parametros
 		return;
 	}
 
@@ -63,19 +63,12 @@ public class Controller {
 		
 		for(int i = 0; i < n ; i++) {
 			if (this.insumos[i] == insumo) {
-				locais[indiceLocalDestino].setNewInsumo(this.insumos[i].getNome(), this.insumos[i].getDataVencimento(), this.insumos[i].getFabricante(), this.insumos[i].getQuantidade(), this.insumos[i].getvalorUnitario(), (int) this.insumos[i].getTipoInsumo(3));								
+				locais[indiceLocalDestino].setNewInsumo(this.insumos[i].getNome(), this.insumos[i].getDataVencimento(), this.insumos[i].getFabricante(), this.insumos[i].getQuantidade(), this.insumos[i].getvalorUnitario(), (int) this.insumos[i].getTipoInsumo(3));		
+				this.insumos[i] = new Insumo();
 				return;
-		}
+			}
 			
-	}
-		
-		
-		
-		
-		
-		
-		
-		
+		}			
 		return;
 	}
 

@@ -8,40 +8,43 @@ public class Insumo {
 	private int quantidade;
 	private int valorUnitario;
 	
+	
 	EPI epi = new EPI();
 	Vacina vacina = new Vacina();
 	Medicamento medicamento = new Medicamento();
-	
+	//Insumo insumo = new Insumo();
 	
 	/* tipo insumo  0E |1 V |2 M . switchcase para decidir quem setar.
 	 * 
 	 * 
+	
 	 * 
 	 * */
+	
+	
+	
 	public Insumo() {
 		//se isumos vierem com valores adulterados, possivel motivo de erro na inicialização 
-		this.nome = null;
-		this.dtVencimento = null;
-		this.nomeFabricante = null;
-		this.tipoInsumo = -1;
-		this.quantidade = -1;
-		this.valorUnitario = -1;
+		
 		return;
 	}
+	//Insumo insumo = new Insumo();
 	
-	public void setInsumo(String nome, String dtVencimento, String nomeFabricante, int quantidade, int valorUnitário, int tipoInsumo) {
-		setNome(nome);
-		setDataVencimento(dtVencimento);
-		setFabricante(nomeFabricante);
-		setQuantidade(quantidade);
-		setvalorUnitario(valorUnitário);
-		setTipoInsumo(tipoInsumo);
-		return;
+	public Insumo newInsumo(String nome, String dtVencimento, String nomeFabricante, int quantidade, int valorUnitário, int tipoInsumo) {
+		Insumo insumo = new Insumo();
+		//this.insumo = insumo;
+		insumo.setNome(nome);
+		insumo.setDataVencimento(dtVencimento);
+		insumo.setFabricante(nomeFabricante);
+		insumo.setQuantidade(quantidade);
+		insumo.setvalorUnitario(valorUnitário);
+		insumo.setTipoInsumo(tipoInsumo);
+		return insumo;
 	}
 	
-	public Insumo getInsumo() {	
-		return new Insumo();
-	}
+//	public Insumo getInsumo() {	
+//		return this.insumo;
+//	}
 	
 	private void setNome(String nome) {
 		this.nome = nome;
