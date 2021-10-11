@@ -3,8 +3,8 @@ package Gerenciador_insumos;
 public class Local {
 	private String nome;
 	private int tipo;
-	private Insumo[] insumos = new Insumo[1023]; // Numero máximo de insumos = 1024. pode ser um problema em larga escala, porem para este projeto é suficiente.
-	
+	private int n = 1023; // numero de insumos
+	private Insumo[] insumos = new Insumo[n]; // Numero máximo de insumos = 1024. pode ser um problema em larga escala, porem para este projeto é suficiente.
 	
 	public Local() {
 		this.nome = "null";
@@ -24,10 +24,7 @@ public class Local {
 		Insumo insumo = new Insumo();
 		insumo = insumo.newInsumo(nome, dtVencimento, nomeFabricante, quantidade, valorUnitário, tipoInsumo);
 		
-		int n = 1023;
-		for(int i = 0; i < n; i++) {
-			//System.out.println("insumo : " + insumos[i].getNome());
-			//System.out.println("Novo insumo adicionado na posição: " + i);
+		for(int i = 0; i < this.n; i++) {
 			if(this.insumos[i] == null) {
 				this.insumos[i] = new Insumo();
 				this.insumos[i] = insumo;
@@ -36,9 +33,8 @@ public class Local {
 			}
 		}
 	}
-	public void removeInsumo(Insumo insumo) {
-		int n = this.insumos.length;		
-		for(int i = 0; i < n ; i++) {
+	public void removeInsumo(Insumo insumo) {		
+		for(int i = 0; i < this.n ; i++) {
 			if (this.insumos[i] == insumo) {
 				System.out.println("Insumo removido: " + insumos[i].getNome());
 				insumos[i] = null;

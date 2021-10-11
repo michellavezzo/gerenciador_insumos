@@ -49,19 +49,19 @@ public class Menu {
 				return;
 			case 1 :
 				System.out.println("--INPUT:  "  + option);
-				controller.cadastraInsumosMS();
+				controller.cadastraInsumosMS(); // falta adicionar parametros para setar insumos.
 				break;
 			case 2:
 				System.out.println("--INPUT:  "  + option);
-				controller.consultaInsumos(option); // escolher indice do local;
+				controller.consultaInsumos(0); // escolher indice do local;
 				break;
 			case 3:
 				System.out.println("--INPUT:  "  + option);
-				controller.consultaInsumosDescricao(option);
+				controller.consultaInsumosDescricao(0); // escolher indice do local;
 				break;
 			case 4:
 				System.out.println("--INPUT:  "  + option);
-				controller.consultaInsumos(option, option);
+				controller.consultaInsumos(0, 0);
 				break;
 			case 5:
 				System.out.println("--INPUT:  "  + option);

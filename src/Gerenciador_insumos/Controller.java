@@ -22,7 +22,17 @@ public class Controller {
 	}
 
 	public void consultaInsumos(int indiceLocal) {	
-		locais[indiceLocal].getInsumos();
+		this.insumos = locais[indiceLocal].getInsumos();
+		
+		int n = this.insumos.length;
+		for(int i = 0; i < n ; i++) {
+			
+			System.out.println("Insumos: " + this.insumos[i].getTipoInsumo() + i);
+			if(this.insumos[i + 1] == null) {
+				return;
+			}
+		}
+		
 		return;
 	}
 	
@@ -31,7 +41,17 @@ public class Controller {
 		int n = this.insumos.length;
 		
 		for(int i = 0; i < n ; i++) {
-			System.out.println("Insumos: " + this.insumos[i].getNome());
+			System.out.println("---------------");
+			System.out.println("Nome: " + this.insumos[i].getNome());
+			System.out.println("Fabricante: " + this.insumos[i].getFabricante());
+			System.out.println("Data vencimento: " + this.insumos[i].getDataVencimento());
+			System.out.println("Quantidade: " + this.insumos[i].getQuantidade());
+			System.out.println("Valor unitário: " + this.insumos[i].getvalorUnitario());
+			System.out.println("---------------");
+			if(this.insumos[i + 1] == null) {
+				return;
+			}
+			
 		}
 		
 		return;
@@ -44,10 +64,13 @@ public class Controller {
 		
 		
 		for(int i = 0; i < n ; i++) {
-			this.insumoFiltrado = this.insumos[i].getTipoInsumo(tipoInsumo);
+			this.insumoFiltrado = this.insumos[i].getObjInsumo(tipoInsumo);
 			insumoFiltradoArr.add(this.insumoFiltrado);
 			
 			System.out.println("Insumos: " + this.insumos[i].getNome());
+			if(this.insumos[i + 1] == null) {
+				break;
+			}
 		}
 		
 		
@@ -63,7 +86,7 @@ public class Controller {
 		
 		for(int i = 0; i < n ; i++) {
 			if (this.insumos[i] == insumo) {
-				locais[indiceLocalDestino].setNewInsumo(this.insumos[i].getNome(), this.insumos[i].getDataVencimento(), this.insumos[i].getFabricante(), this.insumos[i].getQuantidade(), this.insumos[i].getvalorUnitario(), (int) this.insumos[i].getTipoInsumo(3));		
+				locais[indiceLocalDestino].setNewInsumo(this.insumos[i].getNome(), this.insumos[i].getDataVencimento(), this.insumos[i].getFabricante(), this.insumos[i].getQuantidade(), this.insumos[i].getvalorUnitario(), (int) this.insumos[i].getObjInsumo(3));		
 				this.insumos[i] = new Insumo();
 				return;
 			}

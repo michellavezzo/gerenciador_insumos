@@ -96,7 +96,7 @@ public class Insumo {
 	public String getFabricante() {
 		return this.nomeFabricante;
 	}
-	public Object getTipoInsumo(int tipoInsumo) {//retornar o obj
+	public Object getObjInsumo(int tipoInsumo) {//retornar o obj
 		switch(tipoInsumo) {
 			case 0:
 				epi.getDescricao();
@@ -116,6 +116,19 @@ public class Insumo {
 			default:
 				return this.tipoInsumo;					
 		}
+	}
+	public String getTipoInsumo() {//retornar o obj
+		switch(this.tipoInsumo) {
+		case 0:	
+			return "Epi";
+		case 1 :
+			return "Vacina";
+		case 2:
+			return "Medicamento";
+		default:
+			return "Indefinido";					
+	}
+
 	}
 	
 	public int getQuantidade() {
