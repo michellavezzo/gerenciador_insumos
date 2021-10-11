@@ -16,6 +16,8 @@ public class Menu {
 	
 	public void mainMenu() {
 		while(true) {
+			System.out.println("GERENCIADOR DE INSUMOS - MINISTÉRIO DA SAÚDE");
+			System.out.println("\n------------------------------------------\n");
 		System.out.println("GERENCIADOR DE INSUMOS - MINISTÉRIO DA SAÚDE");
 		System.out.println("ESCOLHA AS OPCOES: \n 1 - CADASTRAR INSUMO \n 2 - CONSULTAR INSUMO"
 				+ "\n 3 - CONSULTAR INSUMO COM DESCRICAO \n 4 - CONSULTAR INSUMO COM BASE NO LOCAL E TIPO \n"
@@ -64,7 +66,7 @@ public class Menu {
 					String quantidade = br.readLine();
 					System.out.println("DIGITE VALOR UNITÁRIO");
 					String valorUnitário = br.readLine();
-					System.out.println("DIGITE TIPO INSUMO (N° INTEIRO):\n 1 - EPI\n 2 - VACINA\n 3 - MEDICAMENTOS  ");
+					System.out.println("DIGITE TIPO INSUMO (N° INTEIRO):\n 0 - EPI\n 1 - VACINA\n 2 - MEDICAMENTOS  ");
 					String tipoInsumo = br.readLine();
 
 					//Integer.parseInt(tipoInsumo)
