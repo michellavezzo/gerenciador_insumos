@@ -47,6 +47,7 @@ public class Controller {
 			System.out.println("Data vencimento: " + this.insumos[i].getDataVencimento());
 			System.out.println("Quantidade: " + this.insumos[i].getQuantidade());
 			System.out.println("Valor unitário: " + this.insumos[i].getvalorUnitario());
+			System.out.println("Insumo: " + this.insumos[i].getTipoInsumo());
 			System.out.println("---------------");
 			if(this.insumos[i + 1] == null) {
 				return;
