@@ -38,6 +38,7 @@ public class Menu {
 				e.printStackTrace();
 			}
 			
+			System.out.println("\n------------------------------------------\n");
 		}
 		
 		
@@ -77,25 +78,57 @@ public class Menu {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				System.out.println("--INPUT:  "  + option);
 				break;
 			case 2:
-				
-				System.out.println("--INPUT:  "  + option);
-				controller.consultaInsumos(0); // escolher indice do local;
+				try {
+					System.out.println("DIGITE ID DO LOCAL (0 = MS):");
+					String id = br.readLine();
+					controller.consultaInsumos(Integer.parseInt(id)); 				
+				} catch (IOException e) {
+					System.out.println("erro de leitura");
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			case 3:
-				System.out.println("--INPUT:  "  + option);
-				controller.consultaInsumosDescricao(0); // escolher indice do local;
+				try {
+					System.out.println("DIGITE ID DO LOCAL (0 = MS):");
+					String id = br.readLine();
+					controller.consultaInsumosDescricao(Integer.parseInt(id)); 				
+				} catch (IOException e) {
+					System.out.println("erro de leitura");
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			case 4:
-				System.out.println("--INPUT:  "  + option);// falta adicionar parametros para setar insumos.
-				controller.consultaInsumos(0, 0);
+				try {
+					System.out.println("DIGITE ID DO LOCAL (0 = MS):");
+					String id = br.readLine();
+					System.out.println("DIGITE TIPO INSUMO (N° INTEIRO):\n 0 - EPI\n 1 - VACINA\n 2 - MEDICAMENTOS  ");
+					String tipoInsumo = br.readLine();
+					controller.consultaInsumos(Integer.parseInt(id),Integer.parseInt(tipoInsumo)); 				
+				} catch (IOException e) {
+					System.out.println("erro de leitura");
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				//controller.consultaInsumos(0, 0);
 				break;
 			case 5:
-				System.out.println("--INPUT:  "  + option);
-				controller.distribuiInsumo(2, "Epi");	// falta adicionar parametros para setar insumos.		
-				break;
+				try {
+					System.out.println("DIGITE UF LOCAL DESTINO 1 - 28");
+					String indiceLocalDestino = br.readLine();
+					System.out.println("DIGITE TIPO INSUMO (N° INTEIRO):\n 0 - EPI\n 1 - VACINA\n 2 - MEDICAMENTOS  ");
+					String tipoInsumo = br.readLine();
+					System.out.println("--INPUT:  "  + option);
+					controller.distribuiInsumo(Integer.parseInt(indiceLocalDestino),Integer.parseInt(tipoInsumo));		
+				} catch (IOException e) {
+					System.out.println("erro de leitura");
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}	
+					break;
 			case 6:
 				System.out.println("--INPUT:  "  + option);// falta adicionar parametros para setar insumos.
 				break;
