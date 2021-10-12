@@ -44,7 +44,7 @@ public class Controller {
 		this.insumos = locais[indiceLocal].getInsumos();
 		int n = this.insumos.length;
 		
-		if(this.insumos[indiceLocal] == null) {
+		if(this.locais[indiceLocal] == null) {
 			System.out.println("Local Inválido");
 			return;
 		}
@@ -97,19 +97,19 @@ public class Controller {
 	
 	
 	public void distribuiInsumo(int indiceLocalDestino, int tipoInsumo) {	
-		//distribuir um determinado insumo para um determinado estado e debitar o insumo do estoque do MS e creditar no novo indice
 		this.insumos = locais[0].getInsumos();
 		int n = this.insumos.length;
 		
 		for(int i = 0; i < n ; i++) {
 			if (this.insumos[i].getIntTipoInsumo() == tipoInsumo) {
 				System.out.println("loop " + i);
-				this.locais[indiceLocalDestino] = new Local();
+				this.locais[indiceLocalDestino] = new Local();				
 				this.locais[indiceLocalDestino].setNewInsumo(this.insumos[i].getNome(), this.insumos[i].getDataVencimento(), this.insumos[i].getFabricante(), this.insumos[i].getQuantidade(), this.insumos[i].getvalorUnitario(), this.insumos[i].getIntTipoInsumo());		
 				this.insumos[i] = new Insumo();
+				this.insumos = locais[indiceLocalDestino].getInsumos();
 				System.out.println("Insumo removido do MS id: 0 \n"
-						+ "Insumo inserido No estado id: " + indiceLocalDestino
-						+ "\n Insumo: " + this.insumos[indiceLocalDestino].getTipoInsumo());
+						+ "Insumo inserido No estado id: " + indiceLocalDestino);
+//				/+ "\n Insumo: " + this.insumos[indiceLocalDestino].getTipoInsumo()
 				
 				return;
 			}
